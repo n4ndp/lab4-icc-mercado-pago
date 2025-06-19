@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}Tienda de Camisetas{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-lg rounded-lg">
+                <img src="{{ producto.imagen }}" class="card-img-top rounded-top" alt="{{ producto.nombre }}">
+                <div class="card-body bg-white p-4">
+                    <h5 class="card-title text-center text-dark font-weight-bold">{{ producto.nombre }}</h5>
+                    <p class="card-text text-muted text-center mb-3">Precio: ${{ producto.precio }}</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ url_for('add_to_cart', producto_id=producto.id) }}" class="btn btn-primary btn-lg btn-block mr-2">Agregar al carrito</a>
+                        <button class="btn btn-outline-secondary btn-lg" data-toggle="modal" data-target="#modal{{ producto.id }}">Ver detalles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para cada producto -->
+        <div class="modal fade" id="modal{{ producto.id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{{ producto.id }}" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content rounded-lg">
+                    <div class="modal-header bg-dark text-white rounded-top">
+                        <h5 class="modal-title" id="modalLabel{{ producto.id }}">{{ producto.nombre }}</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ producto.imagen }}" class="img-fluid rounded mx-auto d-block" alt="{{ producto.nombre }}">
+                        <p class="mt-4">{{ producto.descripcion }}</p>
+                        <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+                        <p><strong>Tallas disponibles:</strong> {{ producto.tallas | join(', ') }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

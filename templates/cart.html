@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Carrito de Compras{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mb-4">Carrito de Compras</h1>
+    {% if cart_items %}
+    <div class="list-group">
+        {% for item in cart_items %}
+        <div class="list-group-item d-flex justify-content-between align-items-center bg-white border-0 shadow-sm rounded mb-3">
+            <div>
+                <h5>{{ item.nombre }} x {{ item.cantidad }}</h5>
+                <p class="text-muted">Precio: ${{ item.precio }}</p>
+                <p class="text-muted">Total: ${{ item.precio * item.cantidad }}</p>
+            </div>
+            <a href="{{ url_for('remove_from_cart', producto_id=item.id) }}" class="btn btn-danger btn-sm">Eliminar</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mt-4">
+        <h3>Total: ${{ total }}</h3>
+        
+        <!-- Botones alineados correctamente -->
+        <div class="d-flex justify-content-between mt-3">
+            <a href="{{ url_for('index') }}" class="btn btn-dark">Volver a la tienda</a>
+            <form action="{{ url_for('checkout') }}" method="POST">
+                <button type="submit" class="btn btn-success">Realizar mi pago</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-center text-muted">Tu carrito está vacío.</p>
+    <a href="{{ url_for('index') }}" class="btn btn-dark btn-sm">Volver a la tienda</a>
+    {% endif %}
+{% endblock %}

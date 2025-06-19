@@ -1,0 +1,220 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-img-top {
+    border-radius: 12px;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+}
+
+.card .btn {
+    font-size: 1rem;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.modal-content {
+    border-radius: 12px;
+    background-color: #f8f9fa;
+}
+
+.modal-header {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+}
+
+.btn-primary, .btn-warning {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #444;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.list-group-item {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.list-group-item h5 {
+    font-weight: bold;
+    color: #333;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.d-flex .btn {
+    width: 148px;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 25px;
+}
+
+.list-group-item .btn-danger {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 25px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+}
+
+.list-group-item .btn-danger:hover {
+    background-color: #c82333;
+}
+
+.d-flex .btn-dark {
+    background-color: #343a40;
+    color: white;
+    border: none;
+}
+
+.d-flex .btn-dark:hover {
+    background-color: #444;
+}
+
+.d-flex .btn-success {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.d-flex .btn-success:hover {
+    background-color: #218838;
+}
+
+.container {
+    margin-top: 80px;
+    padding-top: 50px;
+    flex-grow: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h1, h3 {
+    color: #333;
+}
+
+.modal-footer .btn {
+    font-size: 1rem;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .btn-lg {
+        font-size: 1rem;
+    }
+
+    .d-flex .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
